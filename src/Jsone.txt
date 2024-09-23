@@ -1,0 +1,55 @@
+import { useState } from "react"; 
+import './Accordian.css'
+
+const Jsone = () => {
+
+  const [toggle,setToggle] = useState([])
+
+  const accordianList = [
+    {"id" : 1, "title": "uno"},
+    {"id" : 2,"title": "dos"},
+    {"id" : 3,"title": "tres"},
+  ]
+
+  const handleClick = (id) => {
+    if(toggle.includes(id)){
+      setToggle(toggle.filter(toggle => toggle !== id));
+    }
+    else{
+    setToggle(toggle => [...toggle, id])
+  }
+  }
+
+
+
+  const Accordian = ({id , title}) =>{
+    return(
+      <section>
+      <div>
+        {id}
+      </div>
+      <button onClick={ ()=> handleClick(id)}> button </button>
+
+
+
+      <div className={ toggle.includes(id)?'show':'hide'}>
+        {title}
+      </div>
+      </section>
+    )
+  }
+
+  return (
+    <section>
+      {accordianList.map(item =>(
+          <Accordian 
+          key={ item.id}
+          id = {item.id}
+          title= {item.title}
+          />
+        ))}
+    </section>
+  )
+}
+
+export default Jsone;

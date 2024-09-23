@@ -1,0 +1,36 @@
+.tab-container {
+    width: 100%;
+  }
+  
+  .tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .tab-buttons button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .tab-buttons .active {
+    border-bottom: 2px solid blue;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+  

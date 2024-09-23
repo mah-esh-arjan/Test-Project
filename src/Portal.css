@@ -1,0 +1,17 @@
+#background {
+    background-color: white;
+    height: 1000vh;
+}
+
+.frontground {
+    background-color: rgb(177, 199, 177);
+    height: 80%;
+    position: absolute;
+    width: 80%;
+    top: 10px;
+    left:210px;
+}
+
+.hideground{
+    display: none;
+}
