@@ -7,13 +7,14 @@ import Jsone from './Jsone';
 import Tabs from './Tabs';
 import Todo from './todo';
 import Input from './input';
+import Filtered from './filtered';
 
 function App() {
   return (
 
     
     <div className="App">
-      <Todo />
+      <Filtered />
     </div>
   );
 }

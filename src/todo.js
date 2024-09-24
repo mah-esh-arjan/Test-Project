@@ -2,39 +2,37 @@ import { useState } from "react";
 
 
 const Todo = () => {
-    const [text,setText] = useState('');
-    const [list,setList] = useState([]);
 
-    const handleChange = (e) => {
-        setText(e.target.value)
-    }
+    const [inputText,setInputText] = useState('');
+    const [todoList,setTodoList] = useState([]);
 
-    const handleClick = () => {
-        setList([...list, text])
-        setText('')
-
-    }
-
-    const handleRemove = (remove) => {
-        setList(
-            list.filter((filtered,index) => index !== remove)
-        )
+    const handleInputChane = (e) => {
+        setInputText(e.target.value)
     }
     
+    const handleTodoClick = () => {
+        setTodoList(todoList => [...todoList,inputText])
+        setInputText('')
+    }
+
+    const handleTodoRemove = (removeIndex) => {
+        setTodoList(todoList.filter((e,index) => index !== removeIndex))
+
+    }
+
     return(
         <section>
-            <h1>render</h1>
-            <input type="text" value={text} onChange={handleChange}  />
-            <button onClick={handleClick}> Add it</button>
-            <ul>
-        {
-            list.map((item,index)=> (
-                <li key={index}> {item} 
-                  <button onClick={() => handleRemove(index)}>Remove</button> </li>
+             <h2> This is the TODO SECTION</h2>
+            <input value={inputText} onChange={handleInputChane} placeholder="This is a TODO input"/>  
+            <button onClick={handleTodoClick}> Add it!</button>
+             {todoList.map((item, index) => (
+                <>
                
-            ))
-        }
-        </ul>
+                <h1 key={index}> {item} </h1>
+                <button onClick={() => handleTodoRemove(index)}>Remove</button>
+                </>
+            ))}
+            
         </section>
     )
 }
