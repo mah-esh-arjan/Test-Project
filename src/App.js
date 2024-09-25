@@ -8,13 +8,16 @@ import Tabs from './Tabs';
 import Todo from './todo';
 import Input from './input';
 import Filtered from './filtered';
+import Testing from './test';
+import Carousel from './Carousel';
+
 
 function App() {
   return (
 
     
     <div className="App">
-      <Filtered />
+      <Carousel />
     </div>
   );
 }

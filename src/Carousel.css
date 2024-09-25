@@ -1,0 +1,10 @@
+#Carousel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+#Carousel img{
+    height: 100vh;
+    width: 175vh
+}
