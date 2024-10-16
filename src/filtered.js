@@ -6,28 +6,33 @@ const Filtered = () => {
         "Apple", "Banana", "Orange", "Pineapple", "Grapes", "Watermelon", "Strawberry", "Blueberry", "Mango", "Kiwi", "Lemon", "Peach", "Coconut", "Dragonfruit", "Pomegranate", "Raspberry", "Blackberry", "Avocado", "Cherry", "Papaya"
       ];
 
-    const [filtered, setFiltered] = useState("");
-    const [searched,setSearched] = useState(dataArray);
-
+    const [filterInput,setFilterInput] = useState();
+    const [fruitList,setFruitList] = useState(dataArray);
+    
     const handleFilterChange = (e) => {
-        setFiltered(e.target.value);
-        setSearched(dataArray.filter(item => item.toLowerCase().includes(filtered.toLowerCase())))
+        setFilterInput(e.target.value)
     }
 
-    const handleSearched = () => {
-        setSearched(dataArray.filter(item => item.toLowerCase().includes(filtered.toLowerCase())))
+    const handleFruitSearch = () => {
+        if(filterInput == "" || filterInput == " "){
+            setFruitList(dataArray)
+        }
+        else {
+        setFruitList(fruitList.filter(item => item.toLowerCase().includes(filterInput.toLowerCase())))
+     }
     }
 
     return(
         <>
-        <input    
-         value={filtered} 
-         onChange={handleFilterChange}/>
-         {/* <button onClick={handleSearched}>Search</button> */}
+        <input value = {filterInput} onChange={handleFilterChange}/>
+        <button onClick={handleFruitSearch} >Search</button>
+        <ol>
         {
-            searched.map((item, index) => 
-            <h1 key={index}>{item} </h1>)
+            fruitList.map((item,index) => (
+                <li key={index}> {item}</li>
+            ))
         }
+        </ol>
         </>
     )
 }

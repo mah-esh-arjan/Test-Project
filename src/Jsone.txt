@@ -1,55 +1,33 @@
-import { useState } from "react"; 
-import './Accordian.css'
+const [time, setTime] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
-const Jsone = () => {
+  useEffect(() => {
 
-  const [toggle,setToggle] = useState([])
+    let interval = null;
 
-  const accordianList = [
-    {"id" : 1, "title": "uno"},
-    {"id" : 2,"title": "dos"},
-    {"id" : 3,"title": "tres"},
-  ]
-
-  const handleClick = (id) => {
-    if(toggle.includes(id)){
-      setToggle(toggle.filter(toggle => toggle !== id));
+    if (isActive) {
+      interval = setTimeout(() => {
+        setTime(time + 1)
+      }, 1000)
+      console.log("time before clear", time)
     }
-    else{
-    setToggle(toggle => [...toggle, id])
-  }
-  }
+    else {
+      clearInterval(interval)
+    }
 
+    return (() => clearInterval(interval))
 
+  }, [isActive, time]
+  );
 
-  const Accordian = ({id , title}) =>{
-    return(
-      <section>
-      <div>
-        {id}
-      </div>
-      <button onClick={ ()=> handleClick(id)}> button </button>
-
-
-
-      <div className={ toggle.includes(id)?'show':'hide'}>
-        {title}
-      </div>
-      </section>
-    )
-  }
 
   return (
-    <section>
-      {accordianList.map(item =>(
-          <Accordian 
-          key={ item.id}
-          id = {item.id}
-          title= {item.title}
-          />
-        ))}
-    </section>
+    <>
+      <button onClick={() => setIsActive(true)}>  Run</button>
+      <button onClick={() => setIsActive(false)}> Stop </button>
+      <button onClick={() => {
+        setTime(0) ; setIsActive(false)
+      }}>Reset</button>
+      <h1> {time} </h1>
+    </>
   )
-}
-
-export default Jsone;

@@ -10,14 +10,16 @@ import Input from './input';
 import Filtered from './filtered';
 import Testing from './test';
 import Carousel from './Carousel';
-
+import Dropdown from './Dropdown';
+import Timer from './timer';
+import Quote from './quote';
 
 function App() {
   return (
 
     
     <div className="App">
-      <Carousel />
+      <Quote />
     </div>
   );
 }
