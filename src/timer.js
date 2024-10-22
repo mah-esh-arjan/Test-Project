@@ -13,8 +13,7 @@ const Timer = () => {
     if(isActive){
      interval = setInterval(() => {
       setTime(prev => prev +1)
-    },
-    1000)}
+    }, 1000)}
     else{
     clearInterval(interval)
    }

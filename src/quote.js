@@ -6,6 +6,7 @@ const url = "https://api.quotable.io/random";
 const Quote = () => {
 
     const [quote,setQuote] = useState({});
+    const [continueQuote,setContinueQuote] = useState(true);
 
     const fetchQuote = async () => {
         try{
@@ -18,14 +19,27 @@ const Quote = () => {
         }
     }
 
-    useEffect(() => {
-        fetchQuote();
-    },[])
+    useEffect(() => {  
+    
+     let quoteInterval = null;
+    
+    if(continueQuote){
+     quoteInterval = setInterval( () => {fetchQuote() }, 3000);
+    }
+
+    return () => {
+        clearInterval(quoteInterval);
+    };
+    },[continueQuote])
 
     const {author, content} = quote;
 
     const handleFetchQuote = () => {
         fetchQuote();
+    }
+
+    const handleContinueQuote = () => {
+        setContinueQuote(continueQuote => !continueQuote)
     }
 
     return(
@@ -35,6 +49,7 @@ const Quote = () => {
         </div>
         <h2>{content}</h2>
         <button onClick={handleFetchQuote}>Get Quoute</button>
+        <button onClick={handleContinueQuote}>{continueQuote? 'Stop' : 'Start'}</button>
     </div>
     )
 }

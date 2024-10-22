@@ -13,13 +13,16 @@ import Carousel from './Carousel';
 import Dropdown from './Dropdown';
 import Timer from './timer';
 import Quote from './quote';
+import Pagination from './pagination';
+
+
 
 function App() {
   return (
 
     
     <div className="App">
-      <Quote />
+      <Pagination/>
     </div>
   );
 }
