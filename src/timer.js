@@ -3,42 +3,40 @@ import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
 
-  const [time,setTime] = useState(0);
-  const [isActive,setIsActive] = useState(false);
+  const [time, setTime] = useState(1);
+  const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
+    let interval 
 
-    let interval = null;
-
-    if(isActive){
-     interval = setInterval(() => {
-      setTime(prev => prev +1)
-    }, 1000)}
+    if (isActive){
+    
+    interval = setInterval( () => {
+      setTime(count => count + 1)}
+      ,1000)
+     }
     else{
     clearInterval(interval)
-   }
+    }
 
-   return () => clearInterval(interval);
-  },
-    [isActive]
-  );
-
-  const handleActive = () => {
-    setIsActive(isActive => !isActive );
+    return (() => clearInterval(interval))
+}, [isActive])
+  
+  const onActiveClick = () => {
+    setIsActive( active => !active)
   }
 
-
-  const handleStop = () => {
-    setTime(0)
-    setIsActive(false); 
+  const onResetClick = () => {
+    setTime(0);
+    setIsActive(false)
   }
 
   return (
     <>
-    <button onClick={handleActive}>{ isActive? 'Stop': 'Start'}</button>
-  
-    {time}
-    <button onClick={handleStop}>Reset</button>
+      <button onClick={onActiveClick} >{isActive ? 'stop' : 'start'} </button>
+      {time}
+    
+      <button onClick={onResetClick}> Reset</button>
     </>
   )
 

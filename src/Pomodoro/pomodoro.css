@@ -1,0 +1,20 @@
+.Pomodoro-buttons{
+    display: flex;
+    column-gap: 50px;
+    justify-content: center;
+}
+
+.red{
+    background-color: rgb(186, 73, 73);
+    height: 100vh;
+}
+
+.green{
+    background-color: rgb(56, 133, 138);
+    height: 100vh;
+}
+
+.blue{
+    background-color: rgb(57, 112, 151);
+    height: 100vh;
+}

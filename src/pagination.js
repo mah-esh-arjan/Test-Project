@@ -17,11 +17,11 @@ const Pagination = () => {
                 const response = await axios.get(url)
                 const loadData = response.data.products;
                 setPaginationData(loadData);
+
                     // if(isAppending){
                     //     setPaginationData(prevData =>[...loadData, ...prevData]);
                     //     }
                     //     else{
-                    //         setPaginationData(loadData);
                     //     }
             }
             catch(err){
@@ -34,13 +34,13 @@ const Pagination = () => {
        
             fetchPagination(paginatedUrl);
         }
-        ,[]
+        ,[limit]
     )
 
     const handlePaginatedClick = () => {
         setLimit(count => count + 4);
         // setSkip(count => count + 4);
-        fetchPagination(paginatedUrl, true);
+        // fetchPagination(paginatedUrl, true);
     }
 
     return(

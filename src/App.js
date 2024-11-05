@@ -14,15 +14,15 @@ import Dropdown from './Dropdown';
 import Timer from './timer';
 import Quote from './quote';
 import Pagination from './pagination';
-
-
+import Reverse from './reverseTimer';
+import Pomodoro from './Pomodoro/pomodoro';
 
 function App() {
   return (
 
     
     <div className="App">
-      <Pagination/>
+      <Pomodoro/>
     </div>
   );
 }
