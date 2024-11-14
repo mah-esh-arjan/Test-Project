@@ -19,15 +19,18 @@ useEffect(
     let interval;
 
     if (isActive){
-
+        if(time ===0) {
+            handleNext();
+        }
+    else{
        interval = setInterval( () =>  {
         setTime(count => count - 1)
        } ,1000)
     }
-    
+   }
     return (() => clearInterval(interval))
    },
-    [isActive]
+    [isActive, time]
 )   
 
 const handleActive = () => {
@@ -70,6 +73,9 @@ const handleNext = () => {
     }
 }
 
+const minusButton = () => {
+    setTime(count => count - 10)
+}
 
 const backgroundClasses = {
     red : "red",
@@ -93,6 +99,7 @@ const backgroundClasses = {
             <button onClick={handleActive}>{isActive ? "Stop" : "Start"} </button> 
             <button onClick={handleReset}> Reset</button>
             <button onClick={handleNext}> Next</button>
+            <button onClick={minusButton}> MInus</button>
         </div>
     </div>
     )
