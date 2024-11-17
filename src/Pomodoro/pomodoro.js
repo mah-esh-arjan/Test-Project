@@ -7,6 +7,8 @@ const Pomodoro = () => {
     const [isActive, setIsActive] = useState(true);
     const [currentPomo,setCurrentPomo] = useState(1);
     const [background,setBackground] = useState("red");
+    const [todo, setTodo] = useState([]) ;
+    const [inputTodo, setInputTodo] = useState()
 
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
@@ -18,16 +20,21 @@ useEffect(
    () => {
     let interval;
 
+ 
     if (isActive){
-
+        if(time ===0) {
+            handleNext();
+        }
+        else{
        interval = setInterval( () =>  {
         setTime(count => count - 1)
        } ,1000)
     }
+    }
     
     return (() => clearInterval(interval))
    },
-    [isActive]
+    [isActive,time]
 )   
 
 const handleActive = () => {
@@ -78,6 +85,14 @@ const backgroundClasses = {
 
 }
 
+const handleInputChange = (e) => {
+    setInputTodo(e.target.value)
+}
+
+const handleTodoClick = (newTodo) => {
+    setTodo(todo => [...todo, newTodo]);
+    setInputTodo('');
+}
     return(
     <div className={backgroundClasses[background]}>
         <h1> Pomodoro number: {currentPomo}</h1>
@@ -93,6 +108,17 @@ const backgroundClasses = {
             <button onClick={handleActive}>{isActive ? "Stop" : "Start"} </button> 
             <button onClick={handleReset}> Reset</button>
             <button onClick={handleNext}> Next</button>
+        </div>
+
+        <div className="Task">
+            <h1>Tasks</h1>
+            <input placeholder="Todo" onChange={handleInputChange}/>
+            <button onClick={() => handleTodoClick(inputTodo)}>Add it</button>
+            {
+                todo.map((item,index) => (
+                    <h1 key={index}>{item}</h1>
+                ))
+            }
         </div>
     </div>
     )

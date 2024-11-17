@@ -3,24 +3,6 @@ import axios from 'axios';
 
 const List = () => {
     const [ courseData, setcourseData] = useState([]);
-
-    const accordian = [
-      {
-        "id" : 1,
-        "title": "uno"
-      },
-      {
-        "id" : 2,
-        "title" : "duo"
-      },
-
-      {
-        "id": 3,
-        "title" : "tres"
-      }
-
-    ]
-    
     
 
     useEffect(() => {

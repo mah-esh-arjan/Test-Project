@@ -16,6 +16,7 @@ import Quote from './quote';
 import Pagination from './pagination';
 import Reverse from './reverseTimer';
 import Pomodoro from './Pomodoro/pomodoro';
+import Reusable from './props/reusabale';
 
 function App() {
   return (
