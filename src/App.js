@@ -16,15 +16,15 @@ import Quote from './quote';
 import Pagination from './pagination';
 import Reverse from './reverseTimer';
 import Pomodoro from './Pomodoro/pomodoro';
-import Reusable from './props/reusabale';
+import Calculator from './props/calculator/calculator';
 
 function App() {
   return (
 
     
     <div className="App">
-      <Pomodoro/>
-    </div>
+      <Calculator/>
+      </div>
   );
 }
 

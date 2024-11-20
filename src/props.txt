@@ -1,0 +1,41 @@
+Exercises to Practice Props
+1. Reusable Button
+Create a Button component that:
+
+Accepts props for label, color, and onClick callback.
+Applies styles dynamically based on the color prop.
+2. Calculator Component
+Build a simple calculator:
+
+Accept two numbers and an operator (+, -, *, /) as props.
+Display the result.
+3. Blog Post
+Create a Post component that:
+
+Accepts props for title, content, and author.
+Displays the information in a styled card layout.
+4. Progress Bar
+Create a ProgressBar component that:
+
+Takes progress (percentage) as a prop.
+Dynamically adjusts the width of the progress bar.
+5. Customizable Card
+Create a Card component that:
+
+Accepts title, content, and footer props.
+Allows passing JSX for the footer.
+6. Form Input
+Build a TextInput component that:
+
+Takes props for placeholder, value, and onChange.
+Displays an input field that updates based on props.
+7. List Component
+Create a List component that:
+
+Accepts an array of items as a prop.
+Renders a list of those items dynamically.
+8. User Status
+Build a UserStatus component:
+
+Accepts username and isOnline as props.
+Displays a green icon if isOnline is true, red otherwise.
