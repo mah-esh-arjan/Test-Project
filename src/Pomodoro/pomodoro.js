@@ -77,6 +77,9 @@ const handleNext = () => {
     }
 }
 
+const minusButton = () => {
+    setTime(count => count - 10)
+}
 
 const backgroundClasses = {
     red : "red",
@@ -108,6 +111,7 @@ const handleTodoClick = (newTodo) => {
             <button onClick={handleActive}>{isActive ? "Stop" : "Start"} </button> 
             <button onClick={handleReset}> Reset</button>
             <button onClick={handleNext}> Next</button>
+            <button onClick={minusButton}> MInus</button>
         </div>
 
         <div className="Task">

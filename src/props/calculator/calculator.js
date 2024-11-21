@@ -1,13 +1,14 @@
 import { useState,useEffect } from "react";
-import Operations from './operations'
+import Operations from './operations';
+import './calculator.css'
 
 const Calculator = () => {
 
     const [number,setNumber] = useState([]);
     const [a,setA] = useState('');
     const [b,setB] = useState('');
-    const [result, setResult] = useState();
-    const [operator, setOperator] = useState();
+    const [result, setResult] = useState(0);
+    const [operator, setOperator] = useState('');
 
     useEffect(() => {
 
@@ -57,18 +58,32 @@ const handleOperatorClick = () => {
 
     return (
         <>
+        <h1>Basic Calculator</h1>
+        <h2>
+        {a}
+        {operator}
+        {b}
+        {'=' + result}
+        </h2>
+    <div className="number-button">
     {
+        
         number.map((item,index) => (
+           
             <button key={index} onClick={() => handleNumberClick(item)}> {item}</button>
-            
+           
         ))
     }
+    </div>
+    
+    <div className="number-button">
      <button onClick={() => setOperator('+')}> + </button>
      <button onClick={() => setOperator('-')}> - </button>
      <button onClick={() => setOperator('/')}> / </button>
      <button onClick={() => setOperator('*')}> * </button>
      <button onClick={handleOperatorClick}> = </button>
-     {result}
+
+     </div>
         </>
     );
 }
