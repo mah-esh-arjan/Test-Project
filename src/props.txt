@@ -9,11 +9,14 @@ Build a simple calculator:
 
 Accept two numbers and an operator (+, -, *, /) as props.
 Display the result.
+
+
 3. Blog Post
 Create a Post component that:
 
 Accepts props for title, content, and author.
 Displays the information in a styled card layout.
+
 4. Progress Bar
 Create a ProgressBar component that:
 

@@ -17,13 +17,15 @@ import Pagination from './pagination';
 import Reverse from './reverseTimer';
 import Pomodoro from './Pomodoro/pomodoro';
 import Calculator from './props/calculator/calculator';
+import Blog from './props/blogpost/blog';
+import ProgressBar from './props/progressBar/progressBar'; 
 
 function App() {
   return (
 
     
     <div className="App">
-      <Calculator/>
+      <ProgressBar/>
       </div>
   );
 }
