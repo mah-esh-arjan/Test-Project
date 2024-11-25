@@ -19,13 +19,16 @@ import Pomodoro from './Pomodoro/pomodoro';
 import Calculator from './props/calculator/calculator';
 import Blog from './props/blogpost/blog';
 import ProgressBar from './props/progressBar/progressBar'; 
+import Custom from './props/Custom/Custom';
+import FormInput from './props/FormInput/FormInput';
+import ListComponent from './props/ListComponent/ListRender';
 
 function App() {
   return (
 
     
     <div className="App">
-      <ProgressBar/>
+      <ListComponent/>
       </div>
   );
 }
