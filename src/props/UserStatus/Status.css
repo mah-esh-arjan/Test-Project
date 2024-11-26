@@ -1,0 +1,14 @@
+.icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.icon.online{
+    background-color: green;
+}
+
+.icon.offline{
+    background-color: red;
+}

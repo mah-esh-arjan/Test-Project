@@ -22,13 +22,15 @@ import ProgressBar from './props/progressBar/progressBar';
 import Custom from './props/Custom/Custom';
 import FormInput from './props/FormInput/FormInput';
 import ListComponent from './props/ListComponent/ListRender';
+import UserStatus from './props/UserStatus/UserStatus';
+
 
 function App() {
   return (
 
     
     <div className="App">
-      <ListComponent/>
+      <UserStatus />
       </div>
   );
 }
