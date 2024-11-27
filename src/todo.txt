@@ -1,42 +1,88 @@
-import { useState } from "react";
+(Note: Static means a standard text written in html or jsx)
 
+#Landing Page:
+ 1.Header (NAVBAR):
+    a:Logo
+    b:Customize (Drop down with products) (Customize Whole bike) => /Customize (Note: Only accessible to logged in users.) (More in Client section)
+    c:Bikes (Drop down with products) => /{Product}  (Landing Page with product Info multiple secitons)
+    d:Wheels (Customize Wheels only) => /wheel-configurator
+    e:Info (Drop Down with 3 options):
+        I.Our Story => /our-story (Static About us with Images 3 section)
+        II.Why {Brand} =>/why-{Brand} (BreadCrumb with Static)
+        III. Gallery => /build-gallery (Product Gallery about Products(Card) )
+    f:Support =>/Contact (Static with Images and Form) (Customer Support After logged in) 
+    g:Cart (Added product from Customize and Wheels).
+      Multi stepper page :
+	    I.Need Cart (editable)
+	    II. Check out form (Billing Details) (Address) (Payment Option)
+	    III. Finish
+ 
+ 2.Background Home( Bg Image with few Text) (Dynamic)
 
-const Todo = () => {
-    const [text,setText] = useState('');
-    const [list,setList] = useState([]);
+ 3.Products (With Background Images alone side few text) (Dynamic)
+ 
+ 4.Our Partners( Carousel Slider of icons) (Static)
 
-    const handleChange = (e) => {
-        setText(e.target.value)
-    }
+ 5.Warranty(Background Image) with Read More. Redirect to => /Warranty route (Static page with Warrenty Info) 
 
-    const handleClick = () => {
-        setList([...list, text])
-        setText('')
+ 6.Contact-Us Form(Name and Email) (Customer Support After logged in) (Dynamic)
 
-    }
+ 7.Footer:
+    a.LogoIcons with Social Media Icons
+    b.Support
+        I:Contact Us => /Contact (Static with Images and Form)
+        II:Shipping & Delivery => /shipping-delivery (Static With Background) 
+        III:Warranty => /Warranty (Static )
+        IV:Crash Replacement => /Crash Replacement (Static)
+        V: Returns & Exchanges => /Returns (static)
+        VI: Terms & Conditions => /Terms & Conditions (static)
+    c:About
+        I.Our Story =>/our-story (Static About us with Images 3 section)
+        II.Why {Brand} =>/why-{Brand} (BreadCrumb with Static)
+        III.Ambassador program => /join-the-team (BreadCrumb with Static)
+    d: ReadyToBuild
+        Customize => /Customize (options to add and edit parts)
 
-    const handleRemove = (remove) => {
-        setList(
-            list.filter((filtered,index) => index !== remove)
-        )
-    }
+ 8.Blog(For SEO purposes):
+    a.Display Card With a Read more button to redirect to => /blog/blog1
+    b.Photo to display alongside standard paragraph of text( title, hashtags, body)
+
+	
+
+#Addional Features:
+    1.Admin Panel(Dashboard):
+     ADMIN role:
+        a:View User Profiles: 
+            See user details, activity logs, and purchase history.
+        b.Manage Inventory:
+            Track stock levels and update quantities.
+        c. CRUD Blog section.
+        d.Add, Edit, and Remove Products:
+            Update product details like price, description, and stock.
+        e.Set Discounts or Promotions:
+            Apply discounts to specific products or add cupons.
+        g.Refunds and Returns:
+            Manage refund requests or returned items.
+        h.Homepage Customization:
+            Update Background Images , featured products, or Static Text (WYSIWYG editor).
+        i.Deactivate/Activate Accounts:
+            Temporarily block or reactivate user accounts as needed.
+        j. CRUD for Customize secitons.
+        k. Check Customer Complaints/Feedback.
+
+    2. User
+        a.Login/Register:
+            I.Allow users to create accounts with email/password.
+            II.Option for social logins (e.g., Google, Facebook).
+            III.Forgot Password functionality with email verification.
+        b.Profile:
+            i.View and update personal details like name, email, Address, Number and password.
+            ii.Track order.
+            iii. Cancel order or return requests.
+        c.Customization:
+            I.Create a Customized Bikes with varying amount of options.
+            II. Check price of each product when hovered and added to the total amount when clicked.
+            III. Add to Cart.
     
-    return(
-        <section>
-            <h1>render</h1>
-            <input type="text" value={text} onChange={handleChange}  />
-            <button onClick={handleClick}> Add it</button>
-            <ul>
-        {
-            list.map((item,index)=> (
-                <li key={index}> {item} 
-                  <button onClick={() => handleRemove(index)}>Remove</button> </li>
-               
-            ))
-        }
-        </ul>
-        </section>
-    )
-}
-
-export default Todo;
+#Extra
+Reviews

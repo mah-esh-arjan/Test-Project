@@ -1,17 +1,15 @@
 import "./Status.css"
 import { useState } from "react";
 
-const Status = ({online,username}) => {
-    const [isOnline,setIsOnline] = useState(false);
-    const handleStatusClick = () => {
-        setIsOnline( toggle => !toggle )
-    }
+const Status = ({id,username,handleOnline,isOnline}) => {
+   
+
 
     return(
         <>
         <h1> {username}</h1>
-        <span className={isOnline? "icon online": "icon offline"}> </span>
-        <button onClick={handleStatusClick}> Toggle Status</button>
+        <span className={isOnline.includes(id) ? "icon online": "icon offline"}> </span>
+        <button onClick={() => (handleOnline(id))}> Toggle Status</button>
         </>
     )
 }
