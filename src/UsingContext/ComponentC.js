@@ -1,14 +1,16 @@
 import ComponentD from './ComponentD.js';
 import './Component.css';
+import { useContext } from 'react';
+import { NameContext } from './ComponentA.js';
 
+const ComponentC = () => {
 
-const ComponentC = ({props}) => {
+    const name = useContext(NameContext)
 
-   
     return(
         <div className="box">
-            <h1>ComponentC</h1>
-            <ComponentD props={props} />
+            <h1>ComponentC {name}</h1>
+            <ComponentD  />
          </div>
     )
 }

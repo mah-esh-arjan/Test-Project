@@ -2,12 +2,12 @@ import ComponentC from './ComponentC.js';
 import './Component.css';
 
 
-const ComponentB = ({props}) => {
+const ComponentB = () => {
 
     return(
         <div className="box">
             <h1>ComponentB</h1>
-           <ComponentC props={props}/>
+           <ComponentC />
          </div>
     )
 }
