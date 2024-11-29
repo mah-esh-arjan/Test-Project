@@ -24,14 +24,14 @@ import FormInput from './props/FormInput/FormInput';
 import ListComponent from './props/ListComponent/ListRender';
 import UserStatus from './props/UserStatus/UserStatus';
 import Lifted from './props/lift/lifted';
-
+import ComponentA from './UsingContext/ComponentA';
 
 function App() {
   return (
 
     
     <div className="App">
-      <UserStatus />
+      <ComponentA />
       </div>
   );
 }
