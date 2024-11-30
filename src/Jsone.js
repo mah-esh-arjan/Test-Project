@@ -12,34 +12,27 @@ const Jsone = () => {
     {"id":  3, "name": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
   ]
 
-  const handleClick = (id) => {
-    if(list.includes(id)){
-      setList(list.filter(list => list !== id ))
-    }
-    else {
-    setList(list => [...list, id])
-  }
-  }
 
-  const Accordian = ({id,name}) =>{
-    return (
-      <section id="Accordian-Component">  
-      <button onClick={() => (handleClick(id))}>{"Section" + id}</button>
-        <div className={list.includes(id)? "show" : "hide"}>{name}</div>
-      </section>
-    
-  )
+  const handleAccordianList = (id) => {
+    if(list.includes(id)){
+      setList(list.filter(list => list !== id))
+    }
+    else{
+      setList([...list, id])
+    }
+
   }
 
   return (
-    <section>
-      {AccordianList.map(item => (
-         <Accordian 
-          key = {item.id}
-          id = {item.id}
-          name={item.name}
-        />
-    ))}
+    <section id="Accordian-Component">
+   {
+    AccordianList.map((item) => (
+      <div key={item.id}>
+      <button onClick={() => handleAccordianList(item.id)}> Section {item.id}</button>
+      <h1 className={list.includes(item.id)? "show" : "hide"}> {item.name}</h1>
+      </div> 
+    ))
+   }
     
     </section>
   )

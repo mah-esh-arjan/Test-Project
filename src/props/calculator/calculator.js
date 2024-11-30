@@ -1,17 +1,22 @@
-import { useState,useEffect } from "react";
-import Operations from './operations';
-import './calculator.css'
+import { useState } from "react";
+import Operations from './operations'
 
 const Calculator = () => {
-    const [operator, setOperator] = useState('');
-    const [a,setA] = useState('');
-    const [b,setB] = useState('');
 
+    const [number,setNumber] = useState([]);
+
+    for(let i=0; i<9; i++){
+        setNumber([...number], i)
+    }
 
     return (
         <>
-    <Operations a={a} b={b} operator={operator} setA={setA} setB={setB} setOperator={setOperator}/>
-
+    {
+        number.map((item,index) => (
+            <h1 key={index}> {item}</h1>
+        ))
+    }
+        <Operations />
         </>
     );
 }
