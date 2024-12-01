@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import ThemeA from "./ThemeA";
+
+export const ThemeContextState = createContext()
 
 const ThemeContext = () => {
 
@@ -11,9 +13,9 @@ const ThemeContext = () => {
     }
 
     return (
-        <>
-        <ThemeA click = {handleThemeClick} theme ={theme} />
-        </>
+        <ThemeContextState.Provider value={{theme, handleThemeClick}} >
+        <ThemeA />
+        </ThemeContextState.Provider>
     )
 }
 
