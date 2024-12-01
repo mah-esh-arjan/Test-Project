@@ -1,0 +1,11 @@
+.lighter {
+    background-color: #8fce00;
+    border: 2px solid;
+    color: rgb(78, 78, 250);
+}
+
+.darker {
+    background-color: rgb(36, 35, 35);
+    border: 2px solid white;
+    color: whitesmoke;
+}

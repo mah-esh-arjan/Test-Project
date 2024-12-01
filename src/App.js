@@ -24,14 +24,15 @@ import FormInput from './props/FormInput/FormInput';
 import ListComponent from './props/ListComponent/ListRender';
 import UserStatus from './props/UserStatus/UserStatus';
 import Lifted from './props/lift/lifted';
-import ComponentA from './UsingContext/ComponentA';
+import ComponentA from './UsingContext/BoxContext/ComponentA';
+import ThemeContext from './UsingContext/ThemeContext/ThemeContext';
 
 function App() {
   return (
 
     
     <div className="App">
-      <Jsone />
+      <ThemeContext />
       </div>
   );
 }
