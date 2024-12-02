@@ -26,13 +26,14 @@ import UserStatus from './props/UserStatus/UserStatus';
 import Lifted from './props/lift/lifted';
 import ComponentA from './UsingContext/BoxContext/ComponentA';
 import ThemeContext from './UsingContext/ThemeContext/ThemeContext';
+import Coin from './UsingContext/CartContext/Coin';
 
 function App() {
   return (
 
     
     <div className="App">
-      <ThemeContext />
+      <Coin />
       </div>
   );
 }
