@@ -8,7 +8,7 @@ const Coin = () => {
   const [usd, setUSD] = useState({});
   const [gbp, setGBP] = useState({});
   const [eur, setEUR] = useState({});
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchCoin = async () => {
@@ -27,7 +27,7 @@ const Coin = () => {
 
 
   const handleCart = (item) => {
-    setCart((prevItem) => ({...prevItem, ...item}))
+    setCart((prevCart) => ({...prevCart,[item.code]: item}))
   }
 
   return (
