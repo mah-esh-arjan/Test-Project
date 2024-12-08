@@ -33,7 +33,7 @@ function App() {
 
     
     <div className="App">
-      <Coin />
+      <Pomodoro />
       </div>
   );
 }
