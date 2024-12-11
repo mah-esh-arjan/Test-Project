@@ -1,0 +1,91 @@
+Quiz 1: Dynamic Updates with Objects
+You are managing a cart state that looks like this:
+
+javascript
+Copy code
+const [cart, setCart] = useState({});
+Task:
+Add a product to the cart with a unique id.
+Prevent adding the same product twice; if it already exists, update its quantity instead.
+Example item:
+
+javascript
+Copy code
+const item = { id: 101, name: "Laptop", price: 1000, quantity: 1 };
+Hint: Use item.id as the key.
+
+Quiz 2: Manipulate Arrays in State
+You are managing a cart state that is an array:
+
+javascript
+Copy code
+const [cart, setCart] = useState([]);
+Task:
+Add a product to the cart.
+Remove a product by its id.
+Update the quantity of a product in the cart by its id.
+Example items:
+
+javascript
+Copy code
+const product1 = { id: 1, name: "Phone", price: 800, quantity: 1 };
+const product2 = { id: 2, name: "Tablet", price: 600, quantity: 1 };
+
+Quiz 3: Prevent Overwriting
+You have the following cart state:
+
+const [cart, setCart] = useState({});
+Task:
+Write a function to add a product to the cart. Ensure that:
+
+The cart keeps all existing products.
+Each product is stored under a unique key (e.g., its code).
+If a product with the same code is added, it overwrites the existing one.
+Example item:
+javascript
+Copy code
+const item = { code: "USD", name: "Rubles", rate: 96 };
+const item3 = { code: "USD", name: "US Dollar", rate: 85 };
+const item2 = { code: "EUR", name: "EUR Dollar", rate: 77 };
+
+
+Quiz 4: Conditional Rendering
+You are building a shopping cart UI. The state structure is:
+
+javascript
+Copy code
+const [cart, setCart] = useState([]);
+Task:
+Create a button to add items to the cart.
+Display a "Cart is Empty" message if the cart is empty.
+Otherwise, list all items with their names and quantities.
+
+
+Quiz 5: Combining State Changes
+You are managing a combined state:
+
+temp = {name : "test"}
+
+javascript
+Copy code
+const [state, setState] = useState({
+  user: { name: "Mahesh", loggedIn: false },
+  cart: [],
+});
+Task:
+Write a function to log the user in and update their name.
+Write a function to add items to the cart.
+
+
+Advanced Challenge: Nested Updates
+You are managing a cart where each product has additional details, such as:
+
+javascript
+Copy code
+const [cart, setCart] = useState({
+  1: { name: "Laptop", quantity: 1, price: 1000 },
+  2: { name: "Phone", quantity: 2, price: 800 },
+});
+Task:
+Write a function to increase the quantity of a product by its id.
+Write a function to calculate the total price of the cart.

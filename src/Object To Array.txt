@@ -1,0 +1,121 @@
+Beginner Level
+Q1. List All Keys
+Given the object:
+
+javascript
+Copy code
+const fruitCart = {
+  apple: 5,
+  orange: 3,
+  banana: 2
+};
+Write a function that uses Object.keys() to print all the keys in the fruitCart object.
+
+Q2. List All Values
+Given the object:
+
+javascript
+Copy code
+const prices = {
+  apple: 50,
+  orange: 30,
+  banana: 20
+};
+Write a function that uses Object.values() to calculate the total price of all the fruits.
+
+Q3. Check If Key Exists
+Given the object:
+
+javascript
+Copy code
+const inventory = {
+  laptop: 10,
+  phone: 15,
+  tablet: 5
+};
+Write a function that checks if a key (e.g., "laptop") exists in the object using Object.keys().
+
+Intermediate Level
+Q4. Convert Object to Array
+Given the object:
+
+javascript
+Copy code
+const scores = {
+  Alice: 85,
+  Bob: 92,
+  Charlie: 88
+};
+Use Object.entries() to convert this object into an array of [key, value] pairs. Then, log the result.
+
+Q5. Count Properties
+Write a function that takes any object as input and returns the number of properties (keys) in the object. Use Object.keys().
+
+Example:
+
+javascript
+Copy code
+const obj = { a: 1, b: 2, c: 3 };
+countProperties(obj); // Output: 3
+
+Q6. Find the Maximum Value
+Given the object:
+
+javascript
+Copy code
+const testScores = {
+  math: 89,
+  science: 94,
+  history: 76,
+  english: 88
+};
+Use Object.values() to find the highest score.
+
+Advanced Level
+Q7. Swap Keys and Values
+Write a function that takes an object and returns a new object with the keys and values swapped. Use Object.entries().
+
+Example:
+
+javascript
+Copy code
+const obj = { a: 1, b: 2, c: 3 };
+swapKeysAndValues(obj); 
+// Output: { 1: 'a', 2: 'b', 3: 'c' }
+Q8. Filter Keys by Condition
+Given the object:
+
+javascript
+Copy code
+const ages = {
+  Alice: 25,
+  Bob: 30,
+  Charlie: 18,
+  David: 15
+};
+Write a function that uses Object.entries() to return an array of names (keys) where the age (value) is greater than 18.
+
+Q9. Group Values by Key Prefix
+Given the object:
+
+javascript
+Copy code
+const data = {
+  user_1: "Alice",
+  user_2: "Bob",
+  admin_1: "Charlie",
+  admin_2: "David"
+};
+Use Object.entries() to group the values into two arrays: one for users and one for admins.
+
+Q10. Calculate Total Quantity
+Given the object:
+
+javascript
+Copy code
+const cart = {
+  apple: { quantity: 5, price: 10 },
+  orange: { quantity: 3, price: 20 },
+  banana: { quantity: 2, price: 5 }
+};
+Use Object.values() to calculate the total quantity of all items in the cart.
