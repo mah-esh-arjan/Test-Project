@@ -98,3 +98,32 @@ const itemCart = (temp) => {
     })
 }
 
+
+//adv Qn:
+const increaseQuantity = (temp) => {
+
+    setCart((prevCart) => {
+        if(prevCart[temp.id]){
+            return{
+                ...prevCart,
+                [temp.id]: {...prevCartp[temp.id], quantity: prevCartp[temp.id].quantity +1 }
+            }
+        }
+        else{
+            return{
+                ...prevCart
+            }
+        }
+    })
+
+}
+
+const totalCart = () => {
+
+    const cartArr = Object.values(cart);
+
+    const totalPrice = cartArr.reduce((acc,item) => (item.price * item.quantity) + acc , 0)
+    
+    return totalPrice;
+
+} 

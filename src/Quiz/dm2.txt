@@ -1,0 +1,107 @@
+Quiz 1: Merging Cart States
+You have two cart objects representing different user sessions:
+
+javascript
+Copy code
+const cart1 = { 1: { name: "Laptop", quantity: 1, price: 1000 } };
+const cart2 = { 2: { name: "Phone", quantity: 1, price: 800 } };
+Task:
+
+Write a function to merge these two cart states.
+If an item exists in both carts (same key), combine their quantities.
+
+
+Quiz 2: Bulk Updates
+You manage a cart state as an array:
+
+javascript
+Copy code
+const [cart, setCart] = useState([
+  { id: 1, name: "Laptop", quantity: 1, price: 1000 },
+  { id: 2, name: "Phone", quantity: 2, price: 800 },
+]);
+Task:
+
+Write a function to apply a 10% discount to all items.
+Add a function to increase the quantity of all items by 1.
+Quiz 3: Nested Object Manipulation
+You manage a cart with detailed nested information:
+
+javascript
+Copy code
+const [cart, setCart] = useState({
+  1: { name: "Laptop", quantity: 1, price: 1000, details: { warranty: "1 year" } },
+  2: { name: "Phone", quantity: 2, price: 800, details: { warranty: "2 years" } },
+});
+Task:
+
+Write a function to update the warranty period of a product by its id.
+Add a function to add a new details key (e.g., brand: "Apple") to all items in the cart.
+Quiz 4: Dynamic Sorting
+You manage a cart as an array:
+
+javascript
+Copy code
+const [cart, setCart] = useState([
+  { id: 1, name: "Laptop", quantity: 1, price: 1000 },
+  { id: 2, name: "Phone", quantity: 2, price: 800 },
+]);
+Task:
+
+Write a function to sort the cart by price (ascending or descending, based on a parameter).
+Add a function to sort the cart by name alphabetically.
+Quiz 5: Filtering Items
+You have a cart array:
+
+javascript
+Copy code
+const [cart, setCart] = useState([
+  { id: 1, name: "Laptop", quantity: 1, price: 1000 },
+  { id: 2, name: "Phone", quantity: 2, price: 800 },
+  { id: 3, name: "Tablet", quantity: 1, price: 600 },
+]);
+Task:
+
+Write a function to filter items that cost more than $700.
+Add a function to filter out items with a quantity of 0.
+Quiz 6: Combining State Management
+You manage a combined state:
+
+javascript
+Copy code
+const [state, setState] = useState({
+  user: { name: "Mahesh", loggedIn: false },
+  cart: [],
+});
+Task:
+
+Write a function to add an item to the cart and log the user in simultaneously.
+Add a function to log the user out and clear the cart.
+Quiz 7: Paginated Rendering
+You manage a large cart array:
+
+javascript
+Copy code
+const [cart, setCart] = useState([
+  { id: 1, name: "Laptop", price: 1000 },
+  { id: 2, name: "Phone", price: 800 },
+  // ... up to 20 items
+]);
+Task:
+
+Write a function to implement pagination for displaying items, 5 at a time.
+Add buttons to navigate between pages (e.g., "Next" and "Previous").
+Quiz 8: Dependency-Based Updates
+You manage a cart and total price state:
+
+javascript
+Copy code
+const [cart, setCart] = useState([
+  { id: 1, name: "Laptop", quantity: 1, price: 1000 },
+  { id: 2, name: "Phone", quantity: 2, price: 800 },
+]);
+const [totalPrice, setTotalPrice] = useState(0);
+Task:
+
+Write a function to recalculate totalPrice whenever the cart changes.
+Ensure the total is updated dynamically using useEffect.

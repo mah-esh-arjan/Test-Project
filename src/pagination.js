@@ -12,7 +12,7 @@ const Pagination = () => {
         const allUrl = 'https://dummyjson.com/products?';
         const paginatedUrl = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
 
-        const fetchPagination = async (url,isAppending = false) => {
+        const fetchPagination = async (url) => {
             try{
                 const response = await axios.get(url)
                 const loadData = response.data.products;
@@ -39,7 +39,7 @@ const Pagination = () => {
 
     const handlePaginatedClick = () => {
         setLimit(count => count + 4);
-        // setSkip(count => count + 4);
+        setSkip(count => count + 4);
         // fetchPagination(paginatedUrl, true);
     }
 
@@ -48,9 +48,13 @@ const Pagination = () => {
         {
             paginationData.map((item) => (
                 <div className="card pagination-section" style={{width: '27rem'}} key={item.id}>
+               
                 <img className="card-img-top" src={item.thumbnail} />
                 <div className="card-body "> 
+                <h1 class="card-text"> ID: {item.id}</h1>
                 <h1 className="card-title" > {item.title}</h1>
+     
+
                 </div>
                 </div>
             ))

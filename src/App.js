@@ -33,7 +33,7 @@ function App() {
 
     
     <div className="App">
-      <Pomodoro />
+      <Pagination />
       </div>
   );
 }
