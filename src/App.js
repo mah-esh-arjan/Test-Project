@@ -33,7 +33,7 @@ function App() {
 
     
     <div className="App">
-      <Filtered />
+      <Timer />
       </div>
   );
 }
