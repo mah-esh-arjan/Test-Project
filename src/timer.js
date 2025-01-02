@@ -9,7 +9,7 @@ const Timer = () => {
     
     let interval;
     if(isActive){
-    interval = setInterval( setTime( time => time +1), 1000);
+    interval = setInterval( () => setTime( time => time +1), 1000);
     }
     return (() => clearInterval(interval));
   }, [isActive])
@@ -19,9 +19,14 @@ const Timer = () => {
 
   }
 
+  const onClick = () => {
+    
+  }
+
   return (
     <>
     <button onClick={toggleAcitve}> {isActive? 'stop': 'start'}</button>
+    <button> Reset</button>
     <h1> {time}</h1>
     </>
   )
