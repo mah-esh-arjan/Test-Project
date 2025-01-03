@@ -3,7 +3,8 @@ You have two cart objects representing different user sessions:
 
 javascript
 Copy code
-const cart1 = { 1: { name: "Laptop", quantity: 1, price: 1000 } };
+const cart1 = { 2: { name: "Phone", quantity: 1, price: 800 },
+                1: { name: "Laptop", quantity: 1, price: 1000 },};
 const cart2 = { 2: { name: "Phone", quantity: 1, price: 800 } };
 Task:
 
