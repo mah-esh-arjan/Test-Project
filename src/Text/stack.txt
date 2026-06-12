@@ -1,0 +1,75 @@
+🟢 EASY (build fundamentals)
+1. Reverse String (you already did, still include)
+"hello" → "olleh"
+
+👉 Focus: push + pop intuition
+
+2. Remove Adjacent Duplicates
+"aabbcc" → ""
+"abccba" → ""
+"abca" → "abca"
+Idea:
+If current char === stack top → pop
+else → push
+
+👉 This teaches: stack as “undo” mechanism
+
+3. Valid Parentheses (core pattern)
+"()" → true
+"(]" → false
+"{[]}" → true
+
+👉 Focus: matching + conditional pop
+
+🟡 MEDIUM (real DSA thinking starts here)
+4. Min Stack
+
+Design a stack that supports:
+
+push(x)
+pop()
+top()
+getMin() → returns minimum in O(1)
+
+👉 Hint:
+Use two stacks
+
+one normal
+one tracking min
+5. Next Greater Element
+[2,1,2,4,3]
+→ [4,2,4,-1,-1]
+
+👉 Pattern:
+
+loop from right
+remove smaller elements
+stack top = answer
+
+This is your first monotonic stack problem
+
+6. Daily Temperatures
+[73,74,75,71,69,72,76,73]
+→ [1,1,4,2,1,1,0,0]
+
+👉 Meaning:
+“How many days until a warmer temperature?”
+
+👉 Hint:
+
+use stack of indices
+compare temperatures
+🧠 How to approach (important)
+
+Don’t do all at once.
+
+Do this order:
+Reverse (quick confidence)
+Remove duplicates
+Valid parentheses
+👉 stop here if tired
+
+Then:
+4. Min stack
+5. Next greater
+6. Daily temps

@@ -1,0 +1,20 @@
+Easy
+Count the frequency of each character in a string
+
+Find if a number occurs more than once in an array
+
+Check if two strings are anagrams
+
+Medium
+Two numbers that add up to target sum
+
+Group words by length
+
+First non-repeating character in a string
+
+Hard
+Longest subarray with sum zero
+
+Implement LRU Cache
+
+All pairs (i,j) where arr[i] + arr[j] = k

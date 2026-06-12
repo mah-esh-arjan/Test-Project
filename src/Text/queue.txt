@@ -1,0 +1,49 @@
+Your First Practice Problems
+
+Do these in order:
+
+1. Implement Queue
+
+Methods:
+
+enqueue
+dequeue
+front
+size
+isEmpty
+2. Reverse a Queue
+
+Input:
+
+[1,2,3,4]
+
+Output:
+
+[4,3,2,1]
+
+Hint:
+
+stack helps here
+3. Generate Binary Numbers
+
+Input:
+
+5
+
+Output:
+
+1
+10
+11
+100
+101
+
+This is the first problem where queue actually feels magical.
+
+4. Moving Average from Data Stream
+
+Classic queue problem.
+
+5. Number of Recent Calls
+
+Very famous easy LeetCode queue problem.
