@@ -22,6 +22,11 @@ class LinkedList {
         this.head = newNode;
     }
 
+    deleteFront() {
+        this.head = this.head.next;
+
+    }
+
     append(value) {
         const newNode = new Node(value);
 
@@ -40,11 +45,28 @@ class LinkedList {
         current.next = newNode;
     }
 
+    delete(index) {
+        let current = this.head;
+
+        if (index === 0) {
+            this.deleteFront();
+            return;
+
+        }
+
+        for (let i = 0; i < index - 1; i++) {
+            current = current.next;
+        }
+
+        current.next = current.next.next
+    }
+
+
 
     find(value) {
         let current = this.head;
 
-        while (current !== value && current !== null) {
+        while (current.value !== value && current !== null) {
 
             current = current.next;
 
@@ -53,17 +75,30 @@ class LinkedList {
 
     }
 
-    insert(index,value){
+    access(index) {
         let current = this.head;
-        for(let i =0; i < index - 1; i++ ){
+
+        for (let i = 0; i < index; i++) {
+            current = current.next
+        }
+
+        console.log(current.value);
+
+    }
+
+    insert(index, value) {
+        let current = this.head;
+        for (let i = 0; i < index - 1; i++) {
             current = current.next
 
         }
         const newNode = new Node(value);
         newNode.next = current.next;
-        current.next= newNode;
-        
+        current.next = newNode;
+
     }
+
+
 
     // Helper method to display the list in the console
     printList() {
@@ -74,6 +109,58 @@ class LinkedList {
             current = current.next;
         }
         console.log(result.join(" -> ") + " -> null");
+    }
+
+    //revser
+    reverse() {
+        let current = this.head;
+        let prev = null;
+        let next = null;
+
+        while (current !== null) {
+            // first store we traverse next
+            next = current.next
+
+            // now we break link and reverse the ndoe
+            current.next = prev
+
+            // grow the revserd list
+            prev = current
+
+            // now we move current forward
+            current = next
+
+        }
+        this.head = prev;
+    }
+    length() {
+        let current = this.head;
+        let count = 0
+        while (current !== null) {
+            count += 1;
+            current = current.next
+        }
+        return count;
+    }
+    deleteBack() {
+        let current = this.head;
+
+        if (this.head === nul) return;
+
+        if (this.head.next === null) {
+            this.head = null;
+            return;
+        }
+
+        while (current.next.next !== null) {
+            current = current.next;
+
+        }
+        current.next = null;
+    }
+
+    getTail(){
+        
     }
 }
 
