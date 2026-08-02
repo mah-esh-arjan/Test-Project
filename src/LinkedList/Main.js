@@ -31,7 +31,7 @@ class LinkedList {
         const newNode = new Node(value);
         let current = this.head;
 
-        while(current.next !== null){
+        while (current.next !== null) {
             current = current.next;
         }
         current.next = newNode;
@@ -81,12 +81,12 @@ class LinkedList {
         const newNode = new Node(value)
         let current = this.head;
 
-        if(index === 0){
+        if (index === 0) {
 
             current.next = newNode;
         }
- 
-        for(let i=0; i < index-1; i++){
+
+        for (let i = 0; i < index - 1; i++) {
             current = current.next
         }
         newNode.next = current.next;
@@ -134,12 +134,12 @@ class LinkedList {
         }
         return count;
     }
-    
+
     findMiddle() {
         let current = this.head;
-        let index = Math.round (this.length() / 2 ) ;
+        let index = Math.round(this.length() / 2);
 
-        for(let i = 0 ; i < index; i++ ){
+        for (let i = 0; i < index; i++) {
             current = current.next
         }
         return current
@@ -162,18 +162,37 @@ class LinkedList {
         current.next = null;
     }
 
-    middlePointer(){
+    middlePointer() {
         let slow = this.head;
         let fast = this.head;
 
-        while( fast !== null && fast.next !== null ){
-        slow = slow.next;
-        fast = fast.next.next;
+        while (fast !== null && fast.next !== null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
 
         return slow;
 
+    }
+
+    hasCycle() {
+        let slow = this.head;
+        let fast = this.head;
+
+        while (fast !== null && fast.next !== null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast === slow) {
+                return true;
+            }
+
+        }
+    
+        
+
+
+        return false;
     }
 }
 
