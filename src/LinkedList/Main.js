@@ -188,11 +188,25 @@ class LinkedList {
             }
 
         }
-    
-        
-
-
         return false;
+    }
+
+    Nremoval(n) {
+        let slow = this.head;
+        let fast = this.head.next;
+
+        for (let i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+
+        while (fast.next !== null) {
+            slow = slow.next
+            fast = fast.next
+        }
+        slow.next = slow.next.next;
+
+        return slow;
+
     }
 }
 
