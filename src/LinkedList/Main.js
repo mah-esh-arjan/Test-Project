@@ -1,6 +1,9 @@
 // delete(index) → traverse to the node before the one to delete, then reconnect the links.
 // reverse() → traverse while changing each node's next pointer.
 
+const { ReviewsSharp } = require("@mui/icons-material");
+const { pink } = require("@mui/material/colors");
+
 class Node {
     // Constructors in JS use the 'constructor' keyword
     constructor(value) {
@@ -206,6 +209,69 @@ class LinkedList {
         slow.next = slow.next.next;
 
         return slow;
+
+    }
+
+    mergeSortedList(ListA, ListB) {
+
+        let top = ListA;
+        let bottom = ListB;
+        let dummy = new Node(0);
+        let tail = dummy;
+
+        if (top.value < bottom.value) {
+            tail.next = top.value;
+            top = top.next;
+        }
+        else {
+            tail.next = bottom.next;
+            bottom = bottom.next
+        }
+
+        tail = tail.next;
+
+        if (top !== null) {
+            tail.next = top
+        }
+        else {
+            tail.next = bottom
+        }
+
+        return dummmy;
+    }
+
+    palindromeList(listA, listB) {
+
+        let current = listA.head;
+        let prev = null;
+        let next = null;
+
+        while (current !== null) {
+
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+
+        }
+
+        let pointerA = prev;
+        let pointerB = listB.head;
+
+        while (pointerA != null && pointerB !== null) {
+
+
+            if (pointerA.value !== pointerB.value) {
+                this.reverse(prev);
+
+                return false;
+            }
+            pointerA = pointerA.next;
+            pointerB = pointerB.next;
+        }
+        this.reverse(prev);
+
+        return pointerA === null && pointerB === null ;
 
     }
 }
