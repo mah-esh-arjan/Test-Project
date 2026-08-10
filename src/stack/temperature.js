@@ -10,7 +10,7 @@ function diffTemp(arr) {
 
     let result = []
 
-    for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length; i++) {
 
         let count = 0;
 
@@ -24,5 +24,29 @@ function diffTemp(arr) {
         result.push(count);
 
     }
+    return result;
+}
+
+//monotonic stack
+
+function monotonicTemp(arr) {
+
+    let result = new Array(arr.length).fill(0);
+    let stack = [];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+
+        let current = arr[i];
+
+        while (/* ??? */) {
+            // pop something
+        }
+
+        // if stack isn't empty...
+        // calculate the distance
+
+        stack.push(i);
+    }
+
     return result;
 }

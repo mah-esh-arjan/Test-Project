@@ -26,9 +26,9 @@ function nextGreater(arr) {
 // Now with monotonic stack
 function nextGreater(arr) {
 
-    let result = []; // what is this code, what does it do, why is it needed,
+    let result = []; 
     let stack = [] //Monotonic stack
-    for (let i = arr.length -1 ; i >= 0; i--) { // since length is 4 loop break;s
+    for (let i = arr.length -1 ; i >= 0; i--) { // 4: since length is 4 loop break;s
    
         let current = arr[i];
 
