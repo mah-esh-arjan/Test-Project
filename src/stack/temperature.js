@@ -32,20 +32,20 @@ function diffTemp(arr) {
 function monotonicTemp(arr) {
 
     let result = new Array(arr.length).fill(0);
-    let stack = [];
+    let stack = []; //1st it: [], 2nd it: [0], 3rd it:[1]
 
-    for (let i = arr.length - 1; i >= 0; i--) {
+    for (let i = 0; i < arr.length; i++) {
 
-        let current = arr[i];
+        let current = arr[i]; //1st: 73, 2nd: 74, 3rd: [75]
 
-        while (/* ??? */) {
-            // pop something
+        while (current > arr[stack.at(-1)] && stack.length > 0) { //1st: stack is empty so doesnt go, 2nd it: 74 > arr[0] which is 73 meaning true and stack has element;75 >arr[1](74)
+            let previousIndex = stack.pop(); // 2nd it: previous index = 0; 3rd =1;
+
+            result[previousIndex] = i - previousIndex; //2nd it result[0] = 1 - 0, result= [1,0,0,0,0,0], 3rd it = result[1] = 2 - 1, result = [1,1,0,0,0,0]
+
         }
 
-        // if stack isn't empty...
-        // calculate the distance
-
-        stack.push(i);
+        stack.push(i); // we push to stack: [0], and loop goes to 2nd, 2nd it: [1]
     }
 
     return result;
