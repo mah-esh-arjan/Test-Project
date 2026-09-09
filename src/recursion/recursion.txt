@@ -3,3 +3,6 @@ Count occurrences of a character in a string
 Find maximum number in an array recursively
 Check if a string is a palindrome
 Recursive array sum
+Find maximum in an array recursively
+Count occurrences in an array recursively
+Flatten a nested array recursively
