@@ -1,4 +1,5 @@
 //create a Tree
+// DFS
 class TreeNode {
     constructor(value) {
         this.root = value;
@@ -6,24 +7,36 @@ class TreeNode {
         this.right = null;
     }
 
+    //center left right
     preorder(node) {
         if (node === null) {
             return;
         }
-        console.log(node.root);
+        console.log(node.value);
+
         this.preorder(node.left);
         this.preorder(node.right);
-        return answer;
     }
 
+    //left center right
     inorder(node) {
-
         if (node === null) {
             return;
         }
         this.inorder(node.left);
-        console.log(node.root);
-        this.inorder(node.right);
+        console.log(node.value)
+        this.inorder(node.right)
+    }
+
+    //left center right
+    postorder(node) {
+        if (node === null){
+            return ;
+        }
+        this.postorder(node.left)
+        this.postorder(node.right)
+        console.log(node.value);
+
     }
 }
 
