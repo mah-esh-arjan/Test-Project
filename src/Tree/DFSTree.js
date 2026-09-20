@@ -30,8 +30,8 @@ class TreeNode {
 
     //left center right
     postorder(node) {
-        if (node === null){
-            return ;
+        if (node === null) {
+            return;
         }
         this.postorder(node.left)
         this.postorder(node.right)
@@ -40,6 +40,30 @@ class TreeNode {
     }
 }
 
+
+
+function findMaxDfs(root) {
+
+    let max = 0;
+
+    function recur(root) {
+
+        if (root === null) {
+            return
+        }
+        if (root.value > max) {
+            max = root.value
+        }
+        recur(root.left);
+        recur(root.right);
+
+    };
+
+    recur(root);
+
+    return max;
+
+}
 
 /* 
           15
