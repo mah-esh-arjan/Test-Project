@@ -3,7 +3,6 @@ function sum(n) {
         return 0;
     }
 
-    n = n + sum(n - 1);
+    return n + sum(n - 1);
 
-    return n; 
 }
